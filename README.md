@@ -17,7 +17,7 @@ This app allows users to **add, list, toggle, and delete tasks** with **local st
 
 ## 📦 Tech Stack
 - **Next.js 14 (App Router)**
-- **React 19 (use Hook, Suspense)**
+- **React 19**
 - **TypeScript**
 - **Tailwind CSS**
 - **Framer Motion (Animations)**
