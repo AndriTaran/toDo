@@ -9,6 +9,7 @@ interface TaskListProps {
   setTodos: React.Dispatch<React.SetStateAction<Task[]>>;
   isLoading: boolean;
 }
+const placeholderArray  = Array.from(Array(10).keys())
 
 const TaskList: React.FC<TaskListProps> = ({ todos, setTodos, isLoading }) => {
   const deleteTodo = (id: string) => {
@@ -27,14 +28,13 @@ const TaskList: React.FC<TaskListProps> = ({ todos, setTodos, isLoading }) => {
     setTodos(newTodos);
     localStorage.setItem("todos", JSON.stringify(newTodos));
   };
-  const placeholderArray  = Array(7)
 
   return (
     <div className={"mb-[100px] overflow-scroll no-scrollbar"}>
       <AnimatePresence>
         {isLoading ? (
           <>
-            {placeholderArray.map((el: number) => <SkeletonItem key={el}/>)}
+            {placeholderArray.map((el) => <SkeletonItem key={el}/>)}
           </>
         ) : null}
         {todos.map((todo) => (
