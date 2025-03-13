@@ -2,9 +2,9 @@ import React from "react";
 import { BoxIcon, TrashIcon } from "@radix-ui/react-icons";
 import { Skeleton } from "@radix-ui/themes";
 
-export const SkeletonItem = () => {
+export const SkeletonItem = ({key}: {key: number}) => {
   return (
-    <div className={"w-full mb-2"}>
+    <div className={"w-full mb-2"} key={key}>
       <Skeleton>
         <div className="flex flex-col w-full items-start justify-between">
           <p className={`cursor-pointer  "text-black"`}>sadsadas</p>

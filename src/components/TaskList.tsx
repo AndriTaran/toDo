@@ -27,19 +27,14 @@ const TaskList: React.FC<TaskListProps> = ({ todos, setTodos, isLoading }) => {
     setTodos(newTodos);
     localStorage.setItem("todos", JSON.stringify(newTodos));
   };
+  const placeholderArray  = Array(7)
 
   return (
     <div className={"mb-[100px] overflow-scroll no-scrollbar"}>
       <AnimatePresence>
         {isLoading ? (
           <>
-            <SkeletonItem />
-            <SkeletonItem />
-            <SkeletonItem />
-            <SkeletonItem />
-            <SkeletonItem />
-            <SkeletonItem />
-            <SkeletonItem />
+            {placeholderArray.map((el: number) => <SkeletonItem key={el}/>)}
           </>
         ) : null}
         {todos.map((todo) => (
